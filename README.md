@@ -148,39 +148,46 @@ The balls being used are consistent in color.
 3 of the videos are on the same court with the remaining being on different courts.
 All videos have a constant vantage point.
 
-GPU
-Google Cloud Host GPU
-NVIDIA Tesla T4
-1 GPU
-16 GB of GDDR6 memory
-Google Colab Vs. Cloud Host GPUDeep learning is a GPU-intensive endeavor, and with the use of the YOLO algorithm, it is even more necessary to seek a GPU cloud host for training on our data.
+#### GPU
+Google Cloud Host GPU; NVIDIA Tesla T4
+* 1 GPU
+* 16 GB of GDDR6 memory
+
+#### Google Colab Vs. Cloud Host
+
+GPUDeep learning is a GPU-intensive endeavor, and with the use of the YOLO algorithm, it is even more necessary to seek a GPU cloud host for training on our data.
+
 There is limited use for Google Colab GPU before having to upgrade to a premium version
-Disadvantage: The premium is charged by a “compute unit” which is not measured by time usage or given a proper measurement making estimating a budget in turn harder to determine.
-As a result, we believe Google Colab will be beneficial to run lighter loads to reduce time waste and costs.
+* Disadvantage: The premium is charged by a “compute unit” which is not measured by time usage or given a proper measurement making estimating a budget in turn harder to determine.
+* As a result, we believe Google Colab will be beneficial to run lighter loads to reduce time waste and costs.
+
 Using the NVIDIA T4 model - After researching our options, we agreed on the use of this GPU model as the good balance between high computing capabilities and a reasonable price.
- GCP currently charges the NVIDIA T4 model at $0.35/hr. Based on our calculations our budget should cost between $53 and $88. (See Budget for Details).
-YOLO
+* GCP currently charges the NVIDIA T4 model at $0.35/hr. Based on our calculations our budget should cost between $53 and $88. (See Budget for Details).
+
+#### YOLO
 You Only Look Once is a common Machine Learning model used in Object Detection tasks.
-Labeling Optimization
-We propose a semi-automated approach to labeling with the YOLO model that will allow us to gather more training data in a shorter amount of time.
-Efficient Object Detection
-YOLO processes video frames through a single pass through a neural network, which enables real-time object detection which is ideal for video streams.
-High Accuracy
-YOLO divides each of the video frames into grids, and predicts the bounding box and the class of the object in each of those grids, leading to accurate object localization and classification which is crucial in labeling the ball accurately in each frame of the volleyball video
-OpenCV
+##### Labeling Optimization
+* We propose a semi-automated approach to labeling with the YOLO model that will allow us to gather more training data in a shorter amount of time.
+##### Efficient Object Detection
+* YOLO processes video frames through a single pass through a neural network, which enables real-time object detection which is ideal for video streams.
+##### High Accuracy
+* YOLO divides each of the video frames into grids, and predicts the bounding box and the class of the object in each of those grids, leading to accurate object localization and classification which is crucial in labeling the ball accurately in each frame of the volleyball video.
+  
+#### OpenCV
 Open Source Computer Vision Library is used for image processing, video frame extraction, and video analysis tasks.
 Using VideoCapture class to read a variety of video data types (i.e. AVI, mp4)
-Using the read() method, we can extract the frames of the selected video.
-Extract frames from each of the videos at regular time based intervals
-If the video has high frame rate, the regular interval would be longer
-If the video has lower frame rate, the regular intervals would be shorter
-Error Handling:
+* Using the read() method, we can extract the frames of the selected video.
+* Extract frames from each of the videos at regular time based intervals
+* If the video has high frame rate, the regular interval would be longer
+* If the video has lower frame rate, the regular intervals would be shorter
+##### Error Handling:
 Using functions in OpenCV, we can check whether each of the processes, from reading to extraction, is performed correctly.
-Data Movement/Storage
+##### Data Movement/Storage
 The video data is stored on Google Drive and accessed by team members.
 We will potentially, move it to the Google Cloud Platform after labeling when the amount of labeled video frame gets too large
 Since the video data is currently stored in Google Drive, the Google Storage transfer service makes it easy to move our data.
-Platform
+
+#### Platform
 The client will be able to access the project through a GitHub repository.
 
 ## Communication
